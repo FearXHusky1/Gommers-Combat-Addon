@@ -39,7 +39,7 @@
  */
 dependencies {
     compileOnly('appeng:ae2-uel:v0.56.7') { transitive false } // or CE won't compile
-
+    compileOnly "li.cil.oc:OpenComputers:MC1.12.2-1.7.5.192:api"
     //implementation 'com.hbm:ntm-ce-java25:2.5.0.0'
 
     implementation rfg.deobf("curse.maven:hbm-nuclear-tech-mod-community-edition-1312314:8738822") //changed to latest NTM

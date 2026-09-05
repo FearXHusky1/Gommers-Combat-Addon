@@ -11,7 +11,7 @@ public class LoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader {
 
     @Override
     public List<String> getMixinConfigs() {
-        return Collections.singletonList("mixins.reelsedition.json");
+        return Collections.singletonList("mixins.gca.json");
     }
 
     @Override

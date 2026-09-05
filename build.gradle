@@ -451,6 +451,12 @@ if (getFile('repositories.gradle').exists()) {
 } else if (getFile('repositories.gradle.kts').exists()) {
     apply from: 'repositories.gradle.kts'
 }
+repositories {
+    maven {
+        name 'OpenComputers Maven'
+        url 'https://maven.cil.li/'
+    }
+}
 
 repositories {
     if (includeWellKnownRepositories.toBoolean() || includeCommonDevEnvMods.toBoolean()) {

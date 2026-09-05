@@ -4,22 +4,14 @@ import com.gca.contents.registers.AddonBlocks;
 import com.gca.init.AddonFluidTraits;
 import com.gca.init.recipes.AddonCompressorRecipes;
 import com.gca.init.recipes.AddonSolderingRecipes;
+import com.gca.overwrite_contents.config.GCAConfig;
 import com.gca.proxy.CommonProxy;
-import com.hbm.world.biome.BiomeGenCraterBase;
 
-import net.minecraft.block.material.Material;
-import net.minecraft.world.biome.Biome;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
-import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.*;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-
-import java.lang.reflect.Field;
-import java.util.List;
-
 
 
 @Mod(modid = gca.MODID, name = gca.NAME, version = gca.VERSION, dependencies = "required-after:hbm")
@@ -40,10 +32,11 @@ public class gca {
     }
 
     @EventHandler
-    public void preInit(FMLPreInitializationEvent e) {
+    public void preInit(FMLPreInitializationEvent event) {
+        GCAConfig.init(event.getSuggestedConfigurationFile()); // make sure this runs first!!!!!!!!!!
         AddonBlocks.preInit();
 
-        proxy.preInit(e);
+        proxy.preInit(event);
         AddonFluidTraits.preInit();
 
 
