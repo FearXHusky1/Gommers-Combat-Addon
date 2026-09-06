@@ -1,0 +1,10 @@
+[
+  {
+    "modid": "gca",
+    "name": "Gommers Combat Addon",
+    "description": "NTM combat but good",
+    "version": "1.0.0",
+    "mcversion": "1.12.2",
+    "dependencies": ["hbm"]
+  }
+]

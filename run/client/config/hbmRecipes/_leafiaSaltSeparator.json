@@ -1,0 +1,42 @@
+{
+  "recipes": [
+    {
+      "name": "separator.u233",
+      "inputFluid": [
+        ["FLUORINE",500]
+      ],
+      "outputFluid": [
+        ["FLIBE",1000],
+        ["UF6_233",300]
+      ],
+      "duration": 60,
+      "power": 400,
+      "icon": ["hbm:fluid_icon",1,1122],
+      "named": true,
+      "saltType": "FLIBE",
+      "saltAmount": 1000,
+      "mixture": [
+        ["u233",3.0]
+      ]
+    },
+    {
+      "name": "separator.u235",
+      "inputFluid": [
+        ["FLUORINE",500]
+      ],
+      "outputFluid": [
+        ["FLIBE",1000],
+        ["UF6_235",300]
+      ],
+      "duration": 60,
+      "power": 400,
+      "icon": ["hbm:fluid_icon",1,1123],
+      "named": true,
+      "saltType": "FLIBE",
+      "saltAmount": 1000,
+      "mixture": [
+        ["u235",3.0]
+      ]
+    }
+  ]
+}

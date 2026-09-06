@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+FMLCorePlugin: com.gca.core.LoadingPlugin
+FMLCorePluginContainsFMLMod: true
+FMLAT: fia_at.cfg
+ForceLoadAsMod: true
+

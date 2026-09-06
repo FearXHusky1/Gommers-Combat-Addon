@@ -1,0 +1,139 @@
+---- Minecraft Crash Report ----
+// Quite honestly, I wouldn't worry myself about that.
+
+Time: 9/5/26 3:23 PM
+Description: There was a severe problem during mod loading that has caused the game to fail
+
+net.minecraftforge.fml.common.LoaderExceptionModCrash: Caught exception from HBM's Nuclear Tech - Community Edition (hbm)
+Caused by: java.lang.NoClassDefFoundError: com/hbm/tileentity/turret/TileEntityTurretHIMARS
+	at com.hbm.blocks.ModBlocks.<clinit>(ModBlocks.java:822)
+	at com.hbm.items.tool.ItemRebarPlacer.<init>(ItemRebarPlacer.java:49)
+	at com.hbm.items.ModItems.<clinit>(ModItems.java:114)
+	at com.hbm.handler.guncfg.BulletConfigFactory.getTestConfig(BulletConfigFactory.java:33)
+	at com.hbm.handler.BulletConfigSyncingUtil.loadConfigsForSync(BulletConfigSyncingUtil.java:243)
+	at com.hbm.main.MainRegistry.preInit(MainRegistry.java:240)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraftforge.fml.common.FMLModContainer.handleModStateEvent(FMLModContainer.java:639)
+	at sun.reflect.GeneratedMethodAccessor9.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.google.common.eventbus.Subscriber.invokeSubscriberMethod(Subscriber.java:91)
+	at com.google.common.eventbus.Subscriber$SynchronizedSubscriber.invokeSubscriberMethod(Subscriber.java:150)
+	at com.google.common.eventbus.Subscriber$1.run(Subscriber.java:76)
+	at com.google.common.util.concurrent.MoreExecutors$DirectExecutor.execute(MoreExecutors.java:399)
+	at com.google.common.eventbus.Subscriber.dispatchEvent(Subscriber.java:71)
+	at com.google.common.eventbus.Dispatcher$PerThreadQueuedDispatcher.dispatch(Dispatcher.java:116)
+	at com.google.common.eventbus.EventBus.post(EventBus.java:217)
+	at net.minecraftforge.fml.common.LoadController.sendEventToModContainer(LoadController.java:219)
+	at net.minecraftforge.fml.common.LoadController.propogateStateMessage(LoadController.java:197)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.google.common.eventbus.Subscriber.invokeSubscriberMethod(Subscriber.java:91)
+	at com.google.common.eventbus.Subscriber$SynchronizedSubscriber.invokeSubscriberMethod(Subscriber.java:150)
+	at com.google.common.eventbus.Subscriber$1.run(Subscriber.java:76)
+	at com.google.common.util.concurrent.MoreExecutors$DirectExecutor.execute(MoreExecutors.java:399)
+	at com.google.common.eventbus.Subscriber.dispatchEvent(Subscriber.java:71)
+	at com.google.common.eventbus.Dispatcher$PerThreadQueuedDispatcher.dispatch(Dispatcher.java:116)
+	at com.google.common.eventbus.EventBus.post(EventBus.java:217)
+	at net.minecraftforge.fml.common.LoadController.distributeStateMessage(LoadController.java:136)
+	at net.minecraftforge.fml.common.Loader.preinitializeMods(Loader.java:629)
+	at net.minecraftforge.fml.client.FMLClientHandler.beginMinecraftLoading(FMLClientHandler.java:252)
+	at net.minecraft.client.Minecraft.init(Minecraft.java:514)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:422)
+	at net.minecraft.client.main.Main.main(Main.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:87)
+	at GradleStart.main(GradleStart.java:19)
+Caused by: java.lang.ClassNotFoundException: com.hbm.tileentity.turret.TileEntityTurretHIMARS
+	at net.minecraft.launchwrapper.LaunchClassLoader.findClass(LaunchClassLoader.java:191)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:419)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:352)
+	... 52 more
+Caused by: org.spongepowered.asm.mixin.transformer.throwables.MixinTransformerError: An unexpected critical error was encountered
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins(MixinProcessor.java:406)
+	at org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClass(MixinTransformer.java:240)
+	at org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClassBytes(MixinTransformer.java:208)
+	at org.spongepowered.asm.mixin.transformer.Proxy.transform(Proxy.java:71)
+	at net.minecraft.launchwrapper.LaunchClassLoader.runTransformers(LaunchClassLoader.java:279)
+	at net.minecraft.launchwrapper.LaunchClassLoader.findClass(LaunchClassLoader.java:176)
+	... 54 more
+Caused by: org.spongepowered.asm.mixin.injection.throwables.InjectionError: Critical injection failure: Redirector overrideDetectorRange(Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V in mixins.gca.json:MixinTileEntityTurretHIMARS from owner gca failed injection check, (0/1) succeeded. Scanned 0 target(s). Using refmap mixins.gca.refmap.json
+	at org.spongepowered.asm.mixin.injection.struct.InjectionInfo.postInject(InjectionInfo.java:531)
+	at com.llamalad7.mixinextras.wrapper.InjectorWrapperImpl.doPostInject(InjectorWrapperImpl.java:88)
+	at com.llamalad7.mixinextras.wrapper.WrapperInjectionInfo.postInject(WrapperInjectionInfo.java:85)
+	at org.spongepowered.asm.mixin.transformer.MixinTargetContext.applyInjections(MixinTargetContext.java:1490)
+	at org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.applyInjections(MixinApplicatorStandard.java:752)
+	at org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.applyMixin(MixinApplicatorStandard.java:330)
+	at org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.apply(MixinApplicatorStandard.java:246)
+	at org.spongepowered.asm.mixin.transformer.TargetClassContext.apply(TargetClassContext.java:437)
+	at org.spongepowered.asm.mixin.transformer.TargetClassContext.applyMixins(TargetClassContext.java:418)
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins(MixinProcessor.java:377)
+	... 59 more
+
+(MixinBooter) Mixins in Stacktrace:
+	com/hbm/tileentity/turret/TileEntityTurretHIMARS:
+		com.gca.overwrite_contents.mixin.hbm.MixinTileEntityTurretBase (mixins.gca.json) [gca]
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Linux (amd64) version 6.18.38-2-cachyos-lts
+	Java Version: 1.8.0_492, Azul Systems, Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Azul Systems, Inc.
+	Memory: 831850136 bytes (793 MB) / 2281177088 bytes (2175 MB) up to 5726797824 bytes (5461 MB)
+	JVM Flags: 2 total; -Xms1G -Xmx6G
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP 9.42 Powered by Forge 14.23.5.2847 16 mods loaded, 16 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State | ID              | Version           | Source                                                           | Signature |
+	|:----- |:--------------- |:----------------- |:---------------------------------------------------------------- |:--------- |
+	| LCH   | minecraft       | 1.12.2            | minecraft.jar                                                    | None      |
+	| LCH   | mcp             | 9.42              | minecraft.jar                                                    | None      |
+	| LCH   | mixinbooter     | 10.7              | minecraft.jar                                                    | None      |
+	| LCH   | FML             | 8.0.99.99         | recompiled_minecraft-1.12.2.jar                                  | None      |
+	| LCH   | forge           | 14.23.5.2847      | recompiled_minecraft-1.12.2.jar                                  | None      |
+	| LCH   | hbmcore         | 1.12.2-4.0.1      | minecraft.jar                                                    | None      |
+	| LCH   | backups         | 1.5.7             | Backups-1.12.2-1.5.7-deobf.jar                                   | None      |
+	| LCH   | worldedit       | 6.1.10            | worldedit-forge-mc1.12.2-6.1.10-dist (1)-deobf.jar               | None      |
+	| LCH   | extrautils2     | 1.0               | extrautils2-1.12-1.9.9-deobf.jar                                 | None      |
+	| LCH   | ctm             | MC1.12.2-1.0.2.31 | CTM-MC1.12.2-1.0.2.31-deobf.jar                                  | None      |
+	| LCH   | tickratechanger | 1.0.14            | TickrateChanger-1.0.14-deobf.jar                                 | None      |
+	| LCH   | naturescompass  | 1.8.5             | NaturesCompass-1.12.2-1.8.5-deobf.jar                            | None      |
+	| LCH   | jei             | 4.16.1.302        | jei_1.12.2-4.16.1.302.jar                                        | None      |
+	| LCH   | theoneprobe     | 1.4.28            | top-245211-2667280-deobf.jar                                     | None      |
+	| LCE   | hbm             | 2.6.0.0           | hbm-nuclear-tech-mod-community-edition-1312314-8738822-deobf.jar | None      |
+	| LC    | gca             | 1.0.0             | NTM_GCA-CE_Addon-dev.jar                                         | None      |
+
+	Loaded coremods (and transformers): 
+StripLatestForgeRequirements (strip-latest-forge-requirements-1.0-dev.jar)
+  
+LoadingPlugin (NTM_GCA-CE_Addon-dev.jar)
+  
+HbmCorePlugin (hbm-nuclear-tech-mod-community-edition-1312314-8738822-deobf.jar)
+  com.hbm.core.HbmCoreTransformer
+MixinBooter (mixinbooter-10.7.jar)
+  
+CTMCorePlugin (CTM-MC1.12.2-1.0.2.31-deobf.jar)
+  team.chisel.ctm.client.asm.CTMTransformer
+TickrateChanger (TickrateChanger-1.0.14-deobf.jar)
+  me.guichaguri.tickratechanger.TickrateTransformer
+	GL info: ' Vendor: 'AMD' Version: '4.6 (Compatibility Profile) Mesa 26.1.0-arch2.1' Renderer: 'AMD Radeon RX 9060 XT (radeonsi, gfx1200, ACO, DRM 3.64, 6.18.38-2-cachyos-lts)'
+	NTM Modified recipes: 

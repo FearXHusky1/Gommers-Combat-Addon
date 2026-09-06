@@ -1,0 +1,100 @@
+---- Minecraft Crash Report ----
+// Sorry :(
+
+Time: 6/12/26 10:50 PM
+Description: Exception ticking world
+
+java.util.ConcurrentModificationException
+	at java.util.HashMap$HashIterator.remove(HashMap.java:1483)
+	at net.minecraft.world.gen.ChunkProviderServer.tick(ChunkProviderServer.java:279)
+	at net.minecraft.world.WorldServer.tick(WorldServer.java:215)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:830)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:742)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:192)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:591)
+	at java.lang.Thread.run(Thread.java:750)
+
+No Mixin Metadata is found in the Stacktrace.
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at java.util.HashMap$HashIterator.remove(HashMap.java:1483)
+	at net.minecraft.world.gen.ChunkProviderServer.tick(ChunkProviderServer.java:279)
+	at net.minecraft.world.WorldServer.tick(WorldServer.java:215)
+
+-- Affected level --
+Details:
+	Level name: New World
+	All players: 0 total; []
+	Chunk stats: ServerChunkCache: 552 Drop: 298
+	Level seed: 6769605868474078386
+	Level generator: ID 00 - default, ver 1. Features enabled: true
+	Level generator options: 
+	Level spawn location: World: (188,64,-128), Chunk: (at 12,4,0 in 11,-8; contains blocks 176,0,-128 to 191,255,-113), Region: (0,-1; contains chunks 0,-32 to 31,-1, blocks 0,0,-512 to 511,255,-1)
+	Level time: 60540 game time, 60540 day time
+	Level dimension: 0
+	Level storage version: 0x04ABD - Anvil
+	Level weather: Rain time: 123405 (now: false), thunder time: 65793 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: true
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:830)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:742)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:192)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:591)
+	at java.lang.Thread.run(Thread.java:750)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Linux (amd64) version 6.18.32-1-cachyos-lts
+	Java Version: 1.8.0_492, Azul Systems, Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Azul Systems, Inc.
+	Memory: 1437287888 bytes (1370 MB) / 2295332864 bytes (2189 MB) up to 5726797824 bytes (5461 MB)
+	JVM Flags: 2 total; -Xms1G -Xmx6G
+	IntCache: cache: 0, tcache: 0, allocated: 12, tallocated: 94
+	FML: MCP 9.42 Powered by Forge 14.23.5.2847 16 mods loaded, 16 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State  | ID              | Version           | Source                                                           | Signature |
+	|:------ |:--------------- |:----------------- |:---------------------------------------------------------------- |:--------- |
+	| LCHIJA | minecraft       | 1.12.2            | minecraft.jar                                                    | None      |
+	| LCHIJA | mcp             | 9.42              | minecraft.jar                                                    | None      |
+	| LCHIJA | mixinbooter     | 10.7              | minecraft.jar                                                    | None      |
+	| LCHIJA | FML             | 8.0.99.99         | recompiled_minecraft-1.12.2.jar                                  | None      |
+	| LCHIJA | forge           | 14.23.5.2847      | recompiled_minecraft-1.12.2.jar                                  | None      |
+	| LCHIJA | hbmcore         | 1.12.2-4.0.1      | minecraft.jar                                                    | None      |
+	| LCHIJA | backups         | 1.5.7             | Backups-1.12.2-1.5.7-deobf.jar                                   | None      |
+	| LCHIJA | worldedit       | 6.1.10            | worldedit-forge-mc1.12.2-6.1.10-dist (1)-deobf.jar               | None      |
+	| LCHIJA | extrautils2     | 1.0               | extrautils2-1.12-1.9.9-deobf.jar                                 | None      |
+	| LCHIJA | ctm             | MC1.12.2-1.0.2.31 | CTM-MC1.12.2-1.0.2.31-deobf.jar                                  | None      |
+	| LCHIJA | tickratechanger | 1.0.14            | TickrateChanger-1.0.14-deobf.jar                                 | None      |
+	| LCHIJA | naturescompass  | 1.8.5             | NaturesCompass-1.12.2-1.8.5-deobf.jar                            | None      |
+	| LCHIJA | jei             | 4.16.1.302        | jei_1.12.2-4.16.1.302.jar                                        | None      |
+	| LCHIJA | theoneprobe     | 1.4.28            | top-245211-2667280-deobf.jar                                     | None      |
+	| LCHIJA | hbm             | 2.5.0.3           | hbm-nuclear-tech-mod-community-edition-1312314-8174803-deobf.jar | None      |
+	| LCHIJA | reelsediton           | 1.0.0             | NTM_reelsediton_Edition-CE_Addon-dev.jar                               | None      |
+
+	Loaded coremods (and transformers): 
+StripLatestForgeRequirements (strip-latest-forge-requirements-1.0-dev.jar)
+  
+MixinBooter (mixinbooter-10.7.jar)
+  
+LoadingPlugin (NTM_reelsediton_Edition-CE_Addon-dev.jar)
+  
+CTMCorePlugin (CTM-MC1.12.2-1.0.2.31-deobf.jar)
+  team.chisel.ctm.client.asm.CTMTransformer
+TickrateChanger (TickrateChanger-1.0.14-deobf.jar)
+  me.guichaguri.tickratechanger.TickrateTransformer
+HbmCorePlugin (hbm-nuclear-tech-mod-community-edition-1312314-8174803-deobf.jar)
+  com.hbm.core.HbmCoreTransformer
+	GL info: ~~ERROR~~ RuntimeException: No OpenGL context found in the current thread.
+	NTM Modified recipes: 
+	Profiler Position: N/A (disabled)
+	Player Count: 0 / 8; []
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fml,forge'

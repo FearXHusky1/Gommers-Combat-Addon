@@ -1,0 +1,110 @@
+---- Minecraft Crash Report ----
+// Don't be sad, have a hug! <3
+
+Time: 8/23/26 4:55 PM
+Description: Exception ticking world
+
+java.lang.RuntimeException: class com.gca.block.BlockBobbleAddon$TileEntityBobble is missing a mapping! This is a bug!
+	at net.minecraft.tileentity.TileEntity.writeInternal(MixinTileEntity.java:89)
+	at net.minecraft.tileentity.TileEntity.writeToNBT(MixinTileEntity.java:80)
+	at com.gca.block.BlockBobbleAddon$TileEntityBobble.writeToNBT(BlockBobbleAddon.java:271)
+	at com.gca.block.BlockBobbleAddon$TileEntityBobble.getUpdatePacket(BlockBobbleAddon.java:254)
+	at net.minecraft.server.management.PlayerChunkMapEntry.sendBlockEntity(PlayerChunkMapEntry.java:296)
+	at net.minecraft.server.management.PlayerChunkMapEntry.update(PlayerChunkMapEntry.java:258)
+	at net.minecraft.server.management.PlayerChunkMap.tick(PlayerChunkMap.java:134)
+	at net.minecraft.world.WorldServer.tick(WorldServer.java:235)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:830)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:742)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:192)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:591)
+	at java.lang.Thread.run(Thread.java:750)
+
+No Mixin Metadata is found in the Stacktrace.
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at net.minecraft.tileentity.TileEntity.writeInternal(MixinTileEntity.java:89)
+	at net.minecraft.tileentity.TileEntity.writeToNBT(MixinTileEntity.java:80)
+	at com.gca.block.BlockBobbleAddon$TileEntityBobble.writeToNBT(BlockBobbleAddon.java:271)
+	at com.gca.block.BlockBobbleAddon$TileEntityBobble.getUpdatePacket(BlockBobbleAddon.java:254)
+	at net.minecraft.server.management.PlayerChunkMapEntry.sendBlockEntity(PlayerChunkMapEntry.java:296)
+	at net.minecraft.server.management.PlayerChunkMapEntry.update(PlayerChunkMapEntry.java:258)
+	at net.minecraft.server.management.PlayerChunkMap.tick(PlayerChunkMap.java:134)
+	at net.minecraft.world.WorldServer.tick(WorldServer.java:235)
+
+-- Affected level --
+Details:
+	Level name: New World
+	All players: 1 total; [EntityPlayerMP['gommer'/186, l='New World', x=259.51, y=72.00, z=-120.37]]
+	Chunk stats: ServerChunkCache: 4225 Drop: 0
+	Level seed: 7902659408132180248
+	Level generator: ID 00 - default, ver 1. Features enabled: true
+	Level generator options: 
+	Level spawn location: World: (256,64,-132), Chunk: (at 0,4,12 in 16,-9; contains blocks 256,0,-144 to 271,255,-129), Region: (0,-1; contains chunks 0,-32 to 31,-1, blocks 0,0,-512 to 511,255,-1)
+	Level time: 84137 game time, 84137 day time
+	Level dimension: 0
+	Level storage version: 0x04ABD - Anvil
+	Level weather: Rain time: 82380 (now: false), thunder time: 5012 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: true
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:830)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:742)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:192)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:591)
+	at java.lang.Thread.run(Thread.java:750)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Linux (amd64) version 6.18.38-2-cachyos-lts
+	Java Version: 1.8.0_492, Azul Systems, Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Azul Systems, Inc.
+	Memory: 2266662088 bytes (2161 MB) / 3716677632 bytes (3544 MB) up to 5726797824 bytes (5461 MB)
+	JVM Flags: 2 total; -Xms1G -Xmx6G
+	IntCache: cache: 0, tcache: 0, allocated: 12, tallocated: 94
+	FML: MCP 9.42 Powered by Forge 14.23.5.2847 16 mods loaded, 16 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State  | ID              | Version           | Source                                                           | Signature |
+	|:------ |:--------------- |:----------------- |:---------------------------------------------------------------- |:--------- |
+	| LCHIJA | minecraft       | 1.12.2            | minecraft.jar                                                    | None      |
+	| LCHIJA | mcp             | 9.42              | minecraft.jar                                                    | None      |
+	| LCHIJA | mixinbooter     | 10.7              | minecraft.jar                                                    | None      |
+	| LCHIJA | FML             | 8.0.99.99         | recompiled_minecraft-1.12.2.jar                                  | None      |
+	| LCHIJA | forge           | 14.23.5.2847      | recompiled_minecraft-1.12.2.jar                                  | None      |
+	| LCHIJA | hbmcore         | 1.12.2-4.0.1      | minecraft.jar                                                    | None      |
+	| LCHIJA | backups         | 1.5.7             | Backups-1.12.2-1.5.7-deobf.jar                                   | None      |
+	| LCHIJA | worldedit       | 6.1.10            | worldedit-forge-mc1.12.2-6.1.10-dist (1)-deobf.jar               | None      |
+	| LCHIJA | extrautils2     | 1.0               | extrautils2-1.12-1.9.9-deobf.jar                                 | None      |
+	| LCHIJA | ctm             | MC1.12.2-1.0.2.31 | CTM-MC1.12.2-1.0.2.31-deobf.jar                                  | None      |
+	| LCHIJA | tickratechanger | 1.0.14            | TickrateChanger-1.0.14-deobf.jar                                 | None      |
+	| LCHIJA | naturescompass  | 1.8.5             | NaturesCompass-1.12.2-1.8.5-deobf.jar                            | None      |
+	| LCHIJA | jei             | 4.16.1.302        | jei_1.12.2-4.16.1.302.jar                                        | None      |
+	| LCHIJA | theoneprobe     | 1.4.28            | top-245211-2667280-deobf.jar                                     | None      |
+	| LCHIJA | hbm             | 2.5.0.5           | hbm-nuclear-tech-mod-community-edition-1312314-8330665-deobf.jar | None      |
+	| LCHIJA | reelsedition    | 1.0.0             | NTM_reelsediton_Edition-CE_Addon-dev.jar                         | None      |
+
+	Loaded coremods (and transformers): 
+StripLatestForgeRequirements (strip-latest-forge-requirements-1.0-dev.jar)
+  
+MixinBooter (mixinbooter-10.7.jar)
+  
+CTMCorePlugin (CTM-MC1.12.2-1.0.2.31-deobf.jar)
+  team.chisel.ctm.client.asm.CTMTransformer
+LoadingPlugin (NTM_reelsediton_Edition-CE_Addon-dev.jar)
+  
+TickrateChanger (TickrateChanger-1.0.14-deobf.jar)
+  me.guichaguri.tickratechanger.TickrateTransformer
+HbmCorePlugin (hbm-nuclear-tech-mod-community-edition-1312314-8330665-deobf.jar)
+  com.hbm.core.HbmCoreTransformer
+	GL info: ~~ERROR~~ RuntimeException: No OpenGL context found in the current thread.
+	NTM Modified recipes: 
+	Profiler Position: N/A (disabled)
+	Player Count: 1 / 8; [EntityPlayerMP['gommer'/186, l='New World', x=259.51, y=72.00, z=-120.37]]
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fml,forge'

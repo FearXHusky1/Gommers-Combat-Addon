@@ -1,0 +1,16 @@
+{
+  "mappings": {
+    "com/gca/overwrite_contents/mixin/hbm/GuiContainerAccessor": {
+      "guiLeft": "field_147003_i:I",
+      "guiTop": "field_147009_r:I"
+    }
+  },
+  "data": {
+    "searge": {
+      "com/gca/overwrite_contents/mixin/hbm/GuiContainerAccessor": {
+        "guiLeft": "field_147003_i:I",
+        "guiTop": "field_147009_r:I"
+      }
+    }
+  }
+}

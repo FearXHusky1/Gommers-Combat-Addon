@@ -1,0 +1,17 @@
+{
+  "package": "com.gca.overwrite_contents.mixin.hbm",
+  "required": true,
+  "refmap": "mixins.gca.refmap.json",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.8",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "MixinTileEntityTurretHIMARS",
+    "MixinTileEntityTurretArty"],
+  "client": [
+    "MixinGUITurretHIMARS",
+    "AccessorGUITurretBase",
+    "MixinGUITurretArty"
+  ],
+  "server": []
+}

@@ -1,0 +1,158 @@
+---- Minecraft Crash Report ----
+// Don't be sad. I'll do better next time, I promise!
+
+Time: 9/5/26 9:17 PM
+Description: Unexpected error
+
+java.lang.NoClassDefFoundError: com/hbm/inventory/gui/GUITurretHIMARS
+	at com.hbm.blocks.turret.TurretHIMARS.createNewTileEntity(TurretHIMARS.java:24)
+	at net.minecraft.block.Block.createTileEntity(Block.java:1628)
+	at net.minecraft.world.chunk.Chunk.createNewTileEntity(Chunk.java:836)
+	at net.minecraft.world.chunk.Chunk.getTileEntity(Chunk.java:854)
+	at net.minecraft.world.World.getTileEntity(World.java:2613)
+	at com.rwtema.extrautils2.power.ClientPower.clientTick(ClientPower.java:153)
+	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler_108_ClientPower_clientTick_ClientTickEvent.invoke(.dynamic)
+	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke(ASMEventHandler.java:90)
+	at net.minecraftforge.fml.common.eventhandler.EventBus.post(EventBus.java:182)
+	at net.minecraftforge.fml.common.FMLCommonHandler.onPreClientTick(FMLCommonHandler.java:344)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1835)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1188)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:442)
+	at net.minecraft.client.main.Main.main(Main.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:87)
+	at GradleStart.main(GradleStart.java:19)
+Caused by: java.lang.ClassNotFoundException: com.hbm.inventory.gui.GUITurretHIMARS
+	at net.minecraft.launchwrapper.LaunchClassLoader.findClass(LaunchClassLoader.java:101)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:419)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:352)
+	... 26 more
+
+(MixinBooter) Mixins in Stacktrace:
+	com/hbm/inventory/gui/GUITurretHIMARS:
+		com.gca.overwrite_contents.mixin.hbm.MixinGUITurretHIMARS (mixins.gca.json) [gca]
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at com.hbm.blocks.turret.TurretHIMARS.createNewTileEntity(TurretHIMARS.java:24)
+	at net.minecraft.block.Block.createTileEntity(Block.java:1628)
+	at net.minecraft.world.chunk.Chunk.createNewTileEntity(Chunk.java:836)
+	at net.minecraft.world.chunk.Chunk.getTileEntity(Chunk.java:854)
+	at net.minecraft.world.World.getTileEntity(World.java:2613)
+	at com.rwtema.extrautils2.power.ClientPower.clientTick(ClientPower.java:153)
+	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler_108_ClientPower_clientTick_ClientTickEvent.invoke(.dynamic)
+	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke(ASMEventHandler.java:90)
+	at net.minecraftforge.fml.common.eventhandler.EventBus.post(EventBus.java:182)
+	at net.minecraftforge.fml.common.FMLCommonHandler.onPreClientTick(FMLCommonHandler.java:344)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityPlayerSP['gommer'/292, l='MpServer', x=-145.15, y=74.00, z=137.20]]
+	Chunk stats: MultiplayerChunkCache: 246, 246
+	Level seed: 0
+	Level generator: ID 00 - default, ver 1. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (-147,74,129), Chunk: (at 13,4,1 in -10,8; contains blocks -160,0,128 to -145,255,143), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Level time: 111613 game time, 42249 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: true), thunder time: 0 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: false
+	Forced entities: 86 total; [EntityZombie['Zombie'/130, l='MpServer', x=-157.50, y=62.00, z=88.50], EntityChicken['Chicken'/131, l='MpServer', x=-154.13, y=73.00, z=137.52], EntityCow['Cow'/132, l='MpServer', x=-156.14, y=70.00, z=175.72], EntityBat['Bat'/133, l='MpServer', x=-153.25, y=40.59, z=197.42], EntitySpider['Spider'/140, l='MpServer', x=-138.50, y=71.00, z=79.50], EntityChicken['Chicken'/141, l='MpServer', x=-138.93, y=71.00, z=88.09], EntityChicken['Chicken'/142, l='MpServer', x=-132.88, y=71.00, z=82.69], EntitySheep['Sheep'/143, l='MpServer', x=-132.77, y=71.00, z=87.81], EntityItem['item.item.egg'/144, l='MpServer', x=-133.39, y=71.00, z=82.05], EntitySkeleton['Skeleton'/145, l='MpServer', x=-140.50, y=71.00, z=84.50], EntityItem['item.item.egg'/146, l='MpServer', x=-138.86, y=71.00, z=87.40], EntitySpider['Spider'/147, l='MpServer', x=-139.50, y=71.00, z=84.50], EntitySpider['Spider'/148, l='MpServer', x=-138.50, y=71.00, z=93.50], EntityItem['item.item.egg'/149, l='MpServer', x=-134.62, y=76.00, z=128.02], EntityCow['Cow'/150, l='MpServer', x=-128.78, y=71.00, z=191.85], EntityChicken['Chicken'/151, l='MpServer', x=-130.95, y=71.00, z=196.65], EntityItem['item.item.egg'/152, l='MpServer', x=-130.37, y=71.00, z=196.32], EntityZombie['Zombie'/169, l='MpServer', x=-120.50, y=16.00, z=66.22], EntityMinecartChest['Minecart with Chest'/170, l='MpServer', x=-115.50, y=15.06, z=155.50], EntityCow['Cow'/171, l='MpServer', x=-114.81, y=71.00, z=155.66], EntityChicken['Chicken'/172, l='MpServer', x=-122.18, y=72.00, z=175.46], EntityChicken['Chicken'/173, l='MpServer', x=-116.85, y=72.00, z=175.75], EntitySheep['Sheep'/174, l='MpServer', x=-118.58, y=72.00, z=184.24], EntityItem['item.item.egg'/175, l='MpServer', x=-116.64, y=72.00, z=176.36], EntityCreeper['Creeper'/176, l='MpServer', x=-120.18, y=72.00, z=198.55], EntityChicken['Chicken'/186, l='MpServer', x=-109.60, y=70.00, z=89.80], EntityChicken['Chicken'/187, l='MpServer', x=-104.78, y=70.00, z=83.46], EntityItem['item.item.egg'/188, l='MpServer', x=-110.05, y=70.00, z=88.87], EntityItem['item.item.egg'/189, l='MpServer', x=-105.59, y=70.00, z=84.38], EntitySkeleton['Skeleton'/190, l='MpServer', x=-103.50, y=70.00, z=97.50], EntityEnderman['Enderman'/191, l='MpServer', x=-108.50, y=72.00, z=122.50], EntitySkeleton['Skeleton'/192, l='MpServer', x=-104.50, y=15.00, z=184.50], EntityCow['Cow'/193, l='MpServer', x=-104.82, y=72.00, z=195.49], EntityShrapnel['entity.entity_shrapnel.name'/326, l='MpServer', x=-640.18, y=90.71, z=-272.44], EntityZombie['Zombie'/456, l='MpServer', x=-155.50, y=22.00, z=78.50], EntityZombie['Zombie'/457, l='MpServer', x=-154.50, y=22.00, z=79.50], EntityChicken['Chicken'/202, l='MpServer', x=-92.71, y=69.00, z=99.17], EntityItem['item.item.egg'/203, l='MpServer', x=-92.32, y=69.00, z=98.40], EntityBat['Bat'/204, l='MpServer', x=-94.53, y=21.17, z=138.49], EntityPlayerSP['gommer'/292, l='MpServer', x=-145.15, y=74.00, z=137.20], EntityChicken['Chicken'/205, l='MpServer', x=-94.63, y=70.00, z=141.16], EntityItem['item.item.egg'/206, l='MpServer', x=-94.83, y=70.00, z=140.41], EntityBat['Bat'/207, l='MpServer', x=-80.34, y=25.86, z=170.87], EntityChicken['Chicken'/208, l='MpServer', x=-95.10, y=72.00, z=174.59], EntityItem['item.item.egg'/209, l='MpServer', x=-94.51, y=72.00, z=175.05], EntitySheep['Sheep'/210, l='MpServer', x=-81.19, y=71.00, z=186.50], EntityZombie['Zombie'/82, l='MpServer', x=-215.50, y=72.00, z=78.50], EntityCreeper['Creeper'/211, l='MpServer', x=-86.50, y=68.00, z=206.50], EntityCow['Cow'/83, l='MpServer', x=-223.33, y=68.00, z=88.82], EntityPig['Pig'/84, l='MpServer', x=-211.70, y=70.00, z=103.50], EntityCreeper['Creeper'/212, l='MpServer', x=-88.50, y=68.00, z=204.50], EntityPig['Pig'/85, l='MpServer', x=-208.92, y=72.00, z=122.62], EntityChicken['Chicken'/213, l='MpServer', x=-90.88, y=68.00, z=211.07], EntityZombieVillager['Zombie Villager'/86, l='MpServer', x=-215.22, y=57.00, z=138.51], EntityPig['Pig'/89, l='MpServer', x=-194.48, y=72.00, z=101.74], EntitySkeleton['Skeleton'/90, l='MpServer', x=-197.74, y=34.00, z=132.34], EntityZombie['Zombie'/91, l='MpServer', x=-200.52, y=39.00, z=142.78], EntityBat['Bat'/92, l='MpServer', x=-201.78, y=37.07, z=130.33], EntityCreeper['Creeper'/93, l='MpServer', x=-200.50, y=38.00, z=144.50], EntityChicken['Chicken'/221, l='MpServer', x=-76.69, y=69.00, z=62.90], EntityZombie['Zombie'/94, l='MpServer', x=-195.50, y=69.00, z=147.50], EntityCreeper['Creeper'/223, l='MpServer', x=-65.37, y=73.00, z=117.68], EntityCow['Cow'/95, l='MpServer', x=-205.48, y=65.00, z=215.23], EntitySkeleton['Skeleton'/224, l='MpServer', x=-77.71, y=70.00, z=159.75], EntityBat['Bat'/225, l='MpServer', x=-72.25, y=23.10, z=196.63], EntityChicken['Chicken'/226, l='MpServer', x=-78.82, y=70.00, z=196.42], EntityBat['Bat'/99, l='MpServer', x=-179.07, y=25.84, z=76.48], EntityZombie['Zombie'/227, l='MpServer', x=-69.50, y=68.00, z=200.50], EntityShrapnel['entity.entity_shrapnel.name'/356, l='MpServer', x=-641.31, y=111.75, z=-357.78], EntityBat['Bat'/100, l='MpServer', x=-179.11, y=29.10, z=123.47], EntitySheep['Sheep'/101, l='MpServer', x=-186.21, y=72.00, z=114.55], EntityZombie['Zombie'/102, l='MpServer', x=-176.50, y=30.00, z=142.50], EntityBat['Bat'/103, l='MpServer', x=-183.57, y=36.20, z=140.35], EntityZombie['Zombie'/104, l='MpServer', x=-178.56, y=63.00, z=132.75], EntityZombie['Zombie'/105, l='MpServer', x=-177.50, y=60.00, z=141.50], EntityChicken['Chicken'/106, l='MpServer', x=-179.98, y=71.00, z=135.75], EntitySkeleton['Skeleton'/107, l='MpServer', x=-176.52, y=70.00, z=143.88], EntityZombie['Zombie'/108, l='MpServer', x=-179.98, y=31.00, z=146.50], EntityShrapnel['entity.entity_shrapnel.name'/365, l='MpServer', x=-640.09, y=84.83, z=-227.72], EntityZombie['Zombie'/109, l='MpServer', x=-176.50, y=30.00, z=147.50], EntityPig['Pig'/116, l='MpServer', x=-175.27, y=72.00, z=70.62], EntityChicken['Chicken'/117, l='MpServer', x=-167.13, y=72.00, z=69.81], EntityCow['Cow'/119, l='MpServer', x=-167.80, y=72.00, z=105.42], EntityZombie['Zombie'/120, l='MpServer', x=-175.50, y=30.00, z=147.50], EntityBat['Bat'/121, l='MpServer', x=-173.94, y=31.95, z=146.26], EntityZombie['Zombie'/122, l='MpServer', x=-171.50, y=69.00, z=171.50]]
+	Retry entities: 0 total; []
+	Server brand: fml,forge
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:456)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2889)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:471)
+	at net.minecraft.client.main.Main.main(Main.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:87)
+	at GradleStart.main(GradleStart.java:19)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Linux (amd64) version 6.18.38-2-cachyos-lts
+	Java Version: 1.8.0_492, Azul Systems, Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Azul Systems, Inc.
+	Memory: 1518688208 bytes (1448 MB) / 2766667776 bytes (2638 MB) up to 5726797824 bytes (5461 MB)
+	JVM Flags: 2 total; -Xms1G -Xmx6G
+	IntCache: cache: 0, tcache: 0, allocated: 12, tallocated: 94
+	FML: MCP 9.42 Powered by Forge 14.23.5.2847 16 mods loaded, 16 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State  | ID              | Version           | Source                                                           | Signature |
+	|:------ |:--------------- |:----------------- |:---------------------------------------------------------------- |:--------- |
+	| LCHIJA | minecraft       | 1.12.2            | minecraft.jar                                                    | None      |
+	| LCHIJA | mcp             | 9.42              | minecraft.jar                                                    | None      |
+	| LCHIJA | mixinbooter     | 10.7              | minecraft.jar                                                    | None      |
+	| LCHIJA | FML             | 8.0.99.99         | recompiled_minecraft-1.12.2.jar                                  | None      |
+	| LCHIJA | forge           | 14.23.5.2847      | recompiled_minecraft-1.12.2.jar                                  | None      |
+	| LCHIJA | hbmcore         | 1.12.2-4.0.1      | minecraft.jar                                                    | None      |
+	| LCHIJA | backups         | 1.5.7             | Backups-1.12.2-1.5.7-deobf.jar                                   | None      |
+	| LCHIJA | worldedit       | 6.1.10            | worldedit-forge-mc1.12.2-6.1.10-dist (1)-deobf.jar               | None      |
+	| LCHIJA | extrautils2     | 1.0               | extrautils2-1.12-1.9.9-deobf.jar                                 | None      |
+	| LCHIJA | ctm             | MC1.12.2-1.0.2.31 | CTM-MC1.12.2-1.0.2.31-deobf.jar                                  | None      |
+	| LCHIJA | tickratechanger | 1.0.14            | TickrateChanger-1.0.14-deobf.jar                                 | None      |
+	| LCHIJA | naturescompass  | 1.8.5             | NaturesCompass-1.12.2-1.8.5-deobf.jar                            | None      |
+	| LCHIJA | jei             | 4.16.1.302        | jei_1.12.2-4.16.1.302.jar                                        | None      |
+	| LCHIJA | theoneprobe     | 1.4.28            | top-245211-2667280-deobf.jar                                     | None      |
+	| LCHIJA | hbm             | 2.6.0.0           | hbm-nuclear-tech-mod-community-edition-1312314-8738822-deobf.jar | None      |
+	| LCHIJA | gca             | 1.0.0             | NTM_GCA-CE_Addon-dev.jar                                         | None      |
+
+	Loaded coremods (and transformers): 
+StripLatestForgeRequirements (strip-latest-forge-requirements-1.0-dev.jar)
+  
+LoadingPlugin (NTM_GCA-CE_Addon-dev.jar)
+  
+HbmCorePlugin (hbm-nuclear-tech-mod-community-edition-1312314-8738822-deobf.jar)
+  com.hbm.core.HbmCoreTransformer
+MixinBooter (mixinbooter-10.7.jar)
+  
+CTMCorePlugin (CTM-MC1.12.2-1.0.2.31-deobf.jar)
+  team.chisel.ctm.client.asm.CTMTransformer
+TickrateChanger (TickrateChanger-1.0.14-deobf.jar)
+  me.guichaguri.tickratechanger.TickrateTransformer
+	GL info: ' Vendor: 'AMD' Version: '4.6 (Compatibility Profile) Mesa 26.1.0-arch2.1' Renderer: 'AMD Radeon RX 9060 XT (radeonsi, gfx1200, ACO, DRM 3.64, 6.18.38-2-cachyos-lts)'
+	NTM Modified recipes: 
+	Launched Version: FML_DEV
+	LWJGL: 2.9.4
+	OpenGL: AMD Radeon RX 9060 XT (radeonsi, gfx1200, ACO, DRM 3.64, 6.18.38-2-cachyos-lts) GL version 4.6 (Compatibility Profile) Mesa 26.1.0-arch2.1, AMD
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	CPU: 12x AMD Ryzen 5 3600X 6-Core Processor

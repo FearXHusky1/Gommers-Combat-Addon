@@ -1,0 +1,116 @@
+---- Minecraft Crash Report ----
+// My bad.
+
+Time: 9/5/26 9:36 PM
+Description: Exception ticking world
+
+java.lang.NoClassDefFoundError: com/hbm/inventory/gui/GUITurretArty
+	at com.hbm.blocks.turret.TurretArty.createNewTileEntity(TurretArty.java:25)
+	at net.minecraft.block.Block.createTileEntity(Block.java:1628)
+	at net.minecraft.world.chunk.Chunk.createNewTileEntity(Chunk.java:836)
+	at net.minecraft.world.chunk.Chunk.getTileEntity(Chunk.java:854)
+	at net.minecraft.world.World.getTileEntity(World.java:2613)
+	at net.minecraft.server.management.PlayerChunkMapEntry.update(PlayerChunkMapEntry.java:281)
+	at net.minecraft.server.management.PlayerChunkMap.tick(PlayerChunkMap.java:134)
+	at net.minecraft.world.WorldServer.tick(WorldServer.java:235)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:830)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:742)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:192)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:591)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.lang.ClassNotFoundException: com.hbm.inventory.gui.GUITurretArty
+	at net.minecraft.launchwrapper.LaunchClassLoader.findClass(LaunchClassLoader.java:101)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:419)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:352)
+	... 13 more
+
+(MixinBooter) Mixins in Stacktrace:
+	com/hbm/inventory/gui/GUITurretArty:
+		com.gca.overwrite_contents.mixin.hbm.MixinGUITurretArty (mixins.gca.json) [gca]
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at com.hbm.blocks.turret.TurretArty.createNewTileEntity(TurretArty.java:25)
+	at net.minecraft.block.Block.createTileEntity(Block.java:1628)
+	at net.minecraft.world.chunk.Chunk.createNewTileEntity(Chunk.java:836)
+	at net.minecraft.world.chunk.Chunk.getTileEntity(Chunk.java:854)
+	at net.minecraft.world.World.getTileEntity(World.java:2613)
+	at net.minecraft.server.management.PlayerChunkMapEntry.update(PlayerChunkMapEntry.java:281)
+	at net.minecraft.server.management.PlayerChunkMap.tick(PlayerChunkMap.java:134)
+	at net.minecraft.world.WorldServer.tick(WorldServer.java:235)
+
+-- Affected level --
+Details:
+	Level name: New World
+	All players: 1 total; [EntityPlayerMP['gommer'/292, l='New World', x=-138.78, y=75.00, z=126.46]]
+	Chunk stats: ServerChunkCache: 4225 Drop: 0
+	Level seed: 7391023421839278539
+	Level generator: ID 00 - default, ver 1. Features enabled: true
+	Level generator options: 
+	Level spawn location: World: (-147,74,129), Chunk: (at 13,4,1 in -10,8; contains blocks -160,0,128 to -145,255,143), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Level time: 119823 game time, 5343 day time
+	Level dimension: 0
+	Level storage version: 0x04ABD - Anvil
+	Level weather: Rain time: 4198 (now: true), thunder time: 37133 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: true
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:830)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:742)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:192)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:591)
+	at java.lang.Thread.run(Thread.java:750)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Linux (amd64) version 6.18.38-2-cachyos-lts
+	Java Version: 1.8.0_492, Azul Systems, Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Azul Systems, Inc.
+	Memory: 1261844024 bytes (1203 MB) / 3733979136 bytes (3561 MB) up to 5726797824 bytes (5461 MB)
+	JVM Flags: 2 total; -Xms1G -Xmx6G
+	IntCache: cache: 0, tcache: 0, allocated: 12, tallocated: 94
+	FML: MCP 9.42 Powered by Forge 14.23.5.2847 16 mods loaded, 16 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State  | ID              | Version           | Source                                                           | Signature |
+	|:------ |:--------------- |:----------------- |:---------------------------------------------------------------- |:--------- |
+	| LCHIJA | minecraft       | 1.12.2            | minecraft.jar                                                    | None      |
+	| LCHIJA | mcp             | 9.42              | minecraft.jar                                                    | None      |
+	| LCHIJA | mixinbooter     | 10.7              | minecraft.jar                                                    | None      |
+	| LCHIJA | FML             | 8.0.99.99         | recompiled_minecraft-1.12.2.jar                                  | None      |
+	| LCHIJA | forge           | 14.23.5.2847      | recompiled_minecraft-1.12.2.jar                                  | None      |
+	| LCHIJA | hbmcore         | 1.12.2-4.0.1      | minecraft.jar                                                    | None      |
+	| LCHIJA | backups         | 1.5.7             | Backups-1.12.2-1.5.7-deobf.jar                                   | None      |
+	| LCHIJA | worldedit       | 6.1.10            | worldedit-forge-mc1.12.2-6.1.10-dist (1)-deobf.jar               | None      |
+	| LCHIJA | extrautils2     | 1.0               | extrautils2-1.12-1.9.9-deobf.jar                                 | None      |
+	| LCHIJA | ctm             | MC1.12.2-1.0.2.31 | CTM-MC1.12.2-1.0.2.31-deobf.jar                                  | None      |
+	| LCHIJA | tickratechanger | 1.0.14            | TickrateChanger-1.0.14-deobf.jar                                 | None      |
+	| LCHIJA | naturescompass  | 1.8.5             | NaturesCompass-1.12.2-1.8.5-deobf.jar                            | None      |
+	| LCHIJA | jei             | 4.16.1.302        | jei_1.12.2-4.16.1.302.jar                                        | None      |
+	| LCHIJA | theoneprobe     | 1.4.28            | top-245211-2667280-deobf.jar                                     | None      |
+	| LCHIJA | hbm             | 2.6.0.0           | hbm-nuclear-tech-mod-community-edition-1312314-8738822-deobf.jar | None      |
+	| LCHIJA | gca             | 1.0.0             | NTM_GCA-CE_Addon-dev.jar                                         | None      |
+
+	Loaded coremods (and transformers): 
+StripLatestForgeRequirements (strip-latest-forge-requirements-1.0-dev.jar)
+  
+LoadingPlugin (NTM_GCA-CE_Addon-dev.jar)
+  
+HbmCorePlugin (hbm-nuclear-tech-mod-community-edition-1312314-8738822-deobf.jar)
+  com.hbm.core.HbmCoreTransformer
+MixinBooter (mixinbooter-10.7.jar)
+  
+CTMCorePlugin (CTM-MC1.12.2-1.0.2.31-deobf.jar)
+  team.chisel.ctm.client.asm.CTMTransformer
+TickrateChanger (TickrateChanger-1.0.14-deobf.jar)
+  me.guichaguri.tickratechanger.TickrateTransformer
+	GL info: ~~ERROR~~ RuntimeException: No OpenGL context found in the current thread.
+	NTM Modified recipes: 
+	Profiler Position: N/A (disabled)
+	Player Count: 1 / 8; [EntityPlayerMP['gommer'/292, l='New World', x=-138.78, y=75.00, z=126.46]]
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
